@@ -1,0 +1,119 @@
+# Flatpak for later use in installing of applications
+flatpak
+
+# Editor
+neovim
+python3-neovim
+
+# Common tools for all dev
+strace
+ltrace
+radare2
+
+# C/C++ Toolchain
+gcc
+clang
+clang-tools-extra
+valgrind
+gdb
+cmake
+make
+meson
+ninja-build
+
+# Go Toolchain
+go
+
+# Java toolchain as my college forces me to learn this language
+java-latest-openjdk-devel
+
+# Shell
+fish
+
+# nodejs for neovim
+nodejs
+
+# Backup and Recovery tool
+timeshift
+
+# Chrome dev as I use that (enable google-chrome rpmfusion repo)
+google-chrome-unstable
+
+# Android tools (adb, fastboot, etc.)
+android-tools
+
+# Downloading youtube videos and music
+yt-dlp
+
+# Colorful ls alternative
+exa
+
+# Beautiful shell config for fish
+starship
+
+# clipboard for wayland
+wl-clipboard
+
+# for chsh
+util-linux-user
+
+# Offline documentation browser
+zeal
+
+# Dotfiles managing using symlinks
+stow
+
+#Gnome tweaks for getting some extra tweaks
+gnome-tweaks
+
+#Bat, a cat clone with extra wings
+bat
+
+#Shell script analysis tool
+ShellCheck
+
+#The uncompromising code formatter
+black
+
+#Python utility / library to sort Python imports
+python3-isort
+
+#Shell formatter
+shfmt
+
+#Tool for static C/C++ code analysis
+cppcheck
+
+#Super-fast text searching tool (ag)
+the_silver_searcher
+
+#Portal frontend service to flatpak, will help in screensharing
+#Backend implementation for xdg-desktop-portal using GNOME
+xdg-desktop-portal
+
+#Chess game for GNOME
+pychess
+
+#Powerful open source chess engine
+stockfish
+
+#Modular and flexible ORM library for python
+python3-sqlalchemy
+
+#Chess Query Engine
+scoutfish
+
+#Chess database opening tree indexer
+chess_db
+
+#Font configuration and customization library
+fontconfig-devel
+
+#Development files for libxcb
+libxcb-devel
+
+#OpenGL audio spectrum audio visualizer
+glava
+
+#Manage GNOME Shell extensions
+gnome-extensions-app
