@@ -1,0 +1,4 @@
+lazygit from github
+yazi from cargo
+fzf from github
+exa from cargo
