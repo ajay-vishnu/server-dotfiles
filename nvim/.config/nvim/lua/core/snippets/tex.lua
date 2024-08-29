@@ -66,7 +66,7 @@ return {
 
 	-- Text snippets
 	s({ trig = "text", snippetType = "autosnippet" }, fmta("\\text{<>}", { i(1) }), { condition = in_mathzone }),
-	s({ trig = '"', snippetType = "autosnippet" }, fmta("\\text{<>}", { i(1) }), { condition = in_mathzone }),
+	s({ trig = '""', snippetType = "autosnippet" }, fmta("\\text{<>}", { i(1) }), { condition = in_mathzone }),
 
 	-- Basic operations
 	s({ trig = "sr", snippetType = "autosnippet" }, t("^{2}"), { condtion = in_mathzone }),
@@ -205,7 +205,11 @@ return {
 	-- s({trig="\\\\(${GREEK}|${SYMBOL}) und", snippetType="autosnippet"}, fmta("\\underline{\\[[0]]}", { }), {condtion=in_mathzone}),
 
 	-- Derivatives and integrals
-	-- s({trig="par", snippetType="autosnippet"}, fmta("\\frac{ \\partial ${0:y} }{ \\partial ${1:x} } $2", { }), {condtion=in_mathzone}),
+	s(
+		{ trig = "par", snippetType = "autosnippet" },
+		fmta("\\frac{ \\partial <> }{ \\partial <> }", { i(1, "y"), i(2, "x") }),
+		{ condtion = in_mathzone }
+	),
 	-- s({trig=/pa([A-Za-z])([A-Za-z])/, snippetType="autosnippet"}, fmta("\\frac{ \\partial [[0]] }{ \\partial [[1]] } ", { }), {condtion=in_mathzone}),
 	s({ trig = "ddt", snippetType = "autosnippet" }, t("\\frac{d}{dt} "), { condtion = in_mathzone }),
 	-- s({trig=/([^\\])int/, snippetType="autosnippet"}, fmta("[[0]]\\int", options: "mA", priority: -1},
