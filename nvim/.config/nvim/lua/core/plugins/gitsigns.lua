@@ -43,6 +43,8 @@ return {
 				gs.diffthis("~")
 			end, "Diff This ~")
 			map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
+
+			vim.cmd([[Gitsigns toggle_current_line_blame]])
 		end,
 	},
 }

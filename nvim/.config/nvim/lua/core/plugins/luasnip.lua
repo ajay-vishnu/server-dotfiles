@@ -35,6 +35,11 @@ return {
 			enable_autosnippets = true,
 			enable_autosnippet = true,
 		})
+		ls.config.setup({
+			history = true,
+			updateevents = "TextChanged,TextChangedI",
+			enable_autosnippets = true,
+		})
 		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/core/snippets/" })
 	end,
 }

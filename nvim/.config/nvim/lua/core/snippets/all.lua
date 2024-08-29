@@ -2,22 +2,24 @@ return {
 	s({ trig = "DVG" }, {
 		t("Davanagere"),
 	}),
-	s({ trig = "TVM" }, {
-		t("Thiruvananthapuram"),
+	s({ trig = "MYS" }, {
+		t("Mysuru"),
 	}),
-	s({ trig = "IISER" }, {
-		t("Indian Institute of Science Education and Research"),
+	s({ trig = "NIEIT" }, {
+		t("National Institute Of Engineering"),
 	}),
 	s({ trig = "IIT" }, {
 		t("Indian Institute of Technology"),
 	}),
 	s("address", {
-		t("3650, Madhava, 4th main, 9th Cross, SS Layout, B Block, Davanagere"),
+		t("#2925, 2nd Cross, Near Water Tank Park, MCC B Block, Davanagere"),
 	}),
 	s("ph", {
 		c(1, {
-			t("9353480563"),
-			t("+919353480563"),
+			t("9066575399"),
+			t("+919066575399"),
+			t("9159916916"),
+			t("+919159916916"),
 		}),
 	}),
 }
