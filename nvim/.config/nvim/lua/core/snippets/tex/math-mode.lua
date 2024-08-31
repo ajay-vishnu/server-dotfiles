@@ -4,39 +4,6 @@ local in_mathzone = function()
 end
 
 return {
-	-- all snippets in text mode
-	s(
-		"beg",
-		fmta(
-			[[
-                \begin{<>}[<>]
-                    <>
-                \end{<>}
-            ]],
-			{
-				i(1),
-				i(2),
-				i(3),
-				rep(4),
-			}
-		)
-	),
-
-	s({ trig = "mk", snippetType = "autosnippet" }, fmta("$ <> $", { i(1) }), { condition = not in_mathzone }),
-
-	s(
-		{ trig = "dmk", snippetType = "autosnippet" },
-		fmta(
-			[[
-            $$
-                <>
-            $$
-            ]],
-			{ i(1) }
-		),
-		{ condition = not in_mathzone }
-	),
-
 	-- all snippets in math mode
 	-- Greek letters
 	s({ trig = "@a", snippetType = "autosnippet" }, t("\\alpha"), { condition = in_mathzone }),
@@ -124,20 +91,30 @@ return {
 	s({ trig = "yii", snippetType = "autosnippet" }, t("y_{i}"), { condtion = in_mathzone }),
 	s({ trig = "yjj", snippetType = "autosnippet" }, t("y_{j}"), { condtion = in_mathzone }),
 
-	-- Symbols
-	s({ trig = "ooo", snippetType = "autosnippet" }, t("\\infty"), { condtion = in_mathzone }),
-	s({ trig = "sum", snippetType = "autosnippet" }, t("\\sum"), { condtion = in_mathzone }),
-	s({ trig = "prod", snippetType = "autosnippet" }, t("\\prod"), { condtion = in_mathzone }),
+	-- symbols
+	s({ trig = "ooo", snippettype = "autosnippet" }, t("\\infty"), { condtion = in_mathzone }),
+	s("sum", {
+		-- { trig = "sum", snippettype = "autosnippet" }, {
+		c(1, {
+			t("\\sum"),
+			fmta("\\sum_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "n") }),
+		}),
+	}, { condtion = in_mathzone }),
 	s(
-		{ trig = "\\sum", snippetType = "autosnippet" },
-		fmta("\\sum_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "N") }),
+		{ trig = "prod", snippettype = "autosnippet" },
+		{ c(2, { t("\\prod"), fmta("\\prod_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "N") }) }) },
 		{ condtion = in_mathzone }
 	),
-	s(
-		{ trig = "\\prod", snippetType = "autosnippet" },
-		fmta("\\prod_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "N") }),
-		{ condtion = in_mathzone }
-	),
+	-- s(
+	-- 	{ trig = "sum", snippetType = "autosnippet" },
+	-- 	fmta("\\sum_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "N") }),
+	-- 	{ condtion = in_mathzone }
+	-- ),
+	-- s(
+	-- 	{ trig = "prod", snippetType = "autosnippet" },
+	-- 	fmta("\\prod_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "N") }),
+	-- 	{ condtion = in_mathzone }
+	-- ),
 	s(
 		{ trig = "lim", snippetType = "autosnippet" },
 		fmta("\\lim_{ <> \\to <>} }", { i(1, "n"), i(2, "\\infty") }),
