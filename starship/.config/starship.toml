@@ -8,6 +8,7 @@ $git_state\
 $git_status\
 $git_metrics\
 $fill\
+$python\
 $cmd_duration\
 $line_break\
 $character"""
@@ -27,6 +28,10 @@ disabled = false
 
 [fill]
 symbol = " "
+
+[python]
+format = "[${symbol}${pyenv_prefix}(${version})${venv}]($style) "
+symbol = "  "
 
 [directory]
 style = "bold yellow"
