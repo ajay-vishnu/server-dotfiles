@@ -7,6 +7,7 @@ return {
 			ensure_installed = {
 				"bash",
 				"java",
+				"python",
 				"lua",
 				"luadoc",
 				"vim",

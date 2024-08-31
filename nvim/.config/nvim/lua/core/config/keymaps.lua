@@ -40,8 +40,8 @@ map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Wi
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- move Lines
--- map("x", "<S-j>", ":move '>+1<CR>gv-gv", { silent = true, desc = "Move the line down" })
--- map("x", "<S-k>", ":move '<-2<CR>gv-gv", { silent = true, desc = "Move the line up" })
+map("x", "<S-j>", ":move '>+1<CR>gv-gv", { silent = true, desc = "Move the line down" })
+map("x", "<S-k>", ":move '<-2<CR>gv-gv", { silent = true, desc = "Move the line up" })
 
 -- buffers
 -- map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
