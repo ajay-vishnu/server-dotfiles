@@ -48,5 +48,4 @@ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$CARGO_HOME/bin"
 export PATH="$PATH:/opt/nvim-linux64/bin"
-export PATH="$PATH:/home/ajayv/anaconda3/condabin"
 export PATH="$PATH:/opt/apache-maven-3.9.4/bin"
