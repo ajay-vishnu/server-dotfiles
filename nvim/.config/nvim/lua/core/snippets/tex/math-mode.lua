@@ -45,8 +45,13 @@ return {
 	s({ trig = "//", snippetType = "autosnippet" }, fmta("\\frac{<>}{<>}", { i(1), i(2) }), { condtion = in_mathzone }),
 	s({ trig = "ee", snippetType = "autosnippet" }, fmta("e^{ <> }", { i(1) }), { condtion = in_mathzone }),
 	s({ trig = "invs", snippetType = "autosnippet" }, t("^{-1}"), { condtion = in_mathzone }),
-	-- s({trig=/([A-Za-z])(\d)/, snippetType="autosnippet"}, fmta("[[0]]_{[[1]]}", options: "rmA", description: "Auto letter subscript", priority: -1},
-	-- s({trig=/([^\\])(exp|log|ln)/, snippetType="autosnippet"}, fmta("[[0]]\\[[1]]", { }), {condtion=in_mathzone}),
+
+	s({ trig = "(%u)_(%l)", regTrig = true, snippetType = "autosnippet" }, {
+		f(function(_, snip)
+			return snip.captures[1] .. "_{" .. snip.captures[2] .. "}"
+		end),
+	}, { condition = in_mathzone }),
+
 	s({ trig = "conj", snippetType = "autosnippet" }, t("^{*}"), { condtion = in_mathzone }),
 	s({ trig = "Re", snippetType = "autosnippet" }, t("\\mathrm{Re}"), { condtion = in_mathzone }),
 	s({ trig = "Im", snippetType = "autosnippet" }, t("\\mathrm{Im}"), { condtion = in_mathzone }),
@@ -54,19 +59,68 @@ return {
 	s({ trig = "rm", snippetType = "autosnippet" }, fmta("\\mathrm{<>}", { i(1) }), { condtion = in_mathzone }),
 
 	-- Linear algebra
-	-- s({trig=/([^\\])(det)/, snippetType="autosnippet"}, fmta("[[0]]\\[[1]]", { }), {condtion=in_mathzone}),
 	s({ trig = "trace", snippetType = "autosnippet" }, t("\\mathrm{Tr}"), { condtion = in_mathzone }),
 
 	-- More operations
-	-- s({trig="([a-zA-Z])hat", snippetType="autosnippet"}, fmta("\\hat{[[0]]}", { }), {condtion=in_mathzone}),
-	-- s({trig="([a-zA-Z])bar", snippetType="autosnippet"}, fmta("\\bar{[[0]]}", { }), {condtion=in_mathzone}),
-	-- s({trig="([a-zA-Z])dot", snippetType="autosnippet"}, fmta("\\dot{[[0]]}", options: "rmA", priority: -1},
-	-- s({trig="([a-zA-Z])ddot", snippetType="autosnippet"}, fmta("\\ddot{[[0]]}", options: "rmA", priority: 1},
-	-- s({trig="([a-zA-Z])tilde", snippetType="autosnippet"}, fmta("\\tilde{[[0]]}", { }), {condtion=in_mathzone}),
-	-- s({trig="([a-zA-Z])und", snippetType="autosnippet"}, fmta("\\underline{[[0]]}", { }), {condtion=in_mathzone}),
-	-- s({trig="([a-zA-Z])vec", snippetType="autosnippet"}, fmta("\\vec{[[0]]}", { }), {condtion=in_mathzone}),
-	-- s({trig="([a-zA-Z]),\\.", snippetType="autosnippet"}, fmta("\\mathbf{[[0]]}", { }), {condtion=in_mathzone}),
-	-- s({trig="([a-zA-Z])\\.,", snippetType="autosnippet"}, fmta("\\mathbf{[[0]]}", { }), {condtion=in_mathzone}),
+	s({ trig = "(%a)hat", regTrig = true, snippetType = "autosnippet" }, {
+		f(function(_, snip)
+			return "\\hat{" .. snip.captures[1] .. "}"
+		end),
+	}, { condtion = in_mathzone }),
+	s({ trig = "(%a)bar", regTrig = true, snippetType = "autosnippet" }, {
+		f(function(_, snip)
+			return "\\bar{" .. snip.captures[1] .. "}"
+		end),
+	}, { condtion = in_mathzone }),
+	s(
+		{ trig = "(%a)dot", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return "\\dot{" .. snip.captures[1] .. "}"
+		end) },
+		{ condtion = in_mathzone }
+	),
+	s(
+		{ trig = "(%a)ddot", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return "\\ddot{" .. snip.captures[1] .. "}"
+		end) },
+		{ condtion = in_mathzone }
+	),
+	s(
+		{ trig = "(%a)tilde", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return "\\tilde{" .. snip.captures[1] .. "}"
+		end) },
+		{ condtion = in_mathzone }
+	),
+	s(
+		{ trig = "(%a)und", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return "\\und{" .. snip.captures[1] .. "}"
+		end) },
+		{ condtion = in_mathzone }
+	),
+	s(
+		{ trig = "(%a)vec", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return "\\vec{" .. snip.captures[1] .. "}"
+		end) },
+		{ condtion = in_mathzone }
+	),
+	s(
+		{ trig = "(%a),\\.", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return "\\mathbf{" .. snip.captures[1] .. "}"
+		end) },
+		{ condtion = in_mathzone }
+	),
+	s(
+		{ trig = "(%a)\\.,", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return "\\mathbf{" .. snip.captures[1] .. "}"
+		end) },
+		{ condtion = in_mathzone }
+	),
 	-- s({trig="\\\\(${GREEK}),\\.", snippetType="autosnippet"}, fmta("\\boldsymbol{\\[[0]]}", { }), {condtion=in_mathzone}),
 	-- s({trig="\\\\(${GREEK})\\.,", snippetType="autosnippet"}, fmta("\\boldsymbol{\\[[0]]}", { }), {condtion=in_mathzone}),
 	s({ trig = "hat", snippetType = "autosnippet" }, fmta("\\hat{<>}", { i(1) }), { condtion = in_mathzone }),
@@ -79,10 +133,34 @@ return {
 	s({ trig = "vec", snippetType = "autosnippet" }, fmta("\\vec{<>}", { i(1) }), { condtion = in_mathzone }),
 
 	-- More auto letter subscript
-	-- s({trig=/([A-Za-z])_(\d\d)/, snippetType="autosnippet"}, fmta("[[0]]_{[[1]]}", { }), {condtion=in_mathzone}),
-	-- s({trig=/\\hat{([A-Za-z])}(\d)/, snippetType="autosnippet"}, fmta("\\hat{[[0]]}_{[[1]]}", { }), {condtion=in_mathzone}),
-	-- s({trig=/\\vec{([A-Za-z])}(\d)/, snippetType="autosnippet"}, fmta("\\vec{[[0]]}_{[[1]]}", { }), {condtion=in_mathzone}),
-	-- s({trig=/\\mathbf{([A-Za-z])}(\d)/, snippetType="autosnippet"}, fmta("\\mathbf{[[0]]}_{[[1]]}", { }), {condtion=in_mathzone}),
+	s(
+		{ trig = "(%a)_(%d%d)", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return snip.captures[1] .. "_{" .. snip.captures[2] .. "}"
+		end) },
+		{ condition = in_mathzone }
+	),
+	s(
+		{ trig = "\\hat{(%a)}(%d)", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return "\\hat{" .. snip.captures[1] .. "}_{" .. snip.captures[2] .. "}"
+		end) },
+		{ condition = in_mathzone }
+	),
+	s(
+		{ trig = "\\vec{(%a)}(%d)", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return "\\vec{" .. snip.captures[1] .. "}_{" .. snip.captures[2] .. "}"
+		end) },
+		{ condition = in_mathzone }
+	),
+	s(
+		{ trig = "\\mathbf{(%a)}(%d)", regTrig = true, snippetType = "autosnippet" },
+		{ f(function(_, snip)
+			return "\\mathbf{" .. snip.captures[1] .. "}_{" .. snip.captures[2] .. "}"
+		end) },
+		{ condition = in_mathzone }
+	),
 	s({ trig = "xnn", snippetType = "autosnippet" }, t("x_{n}"), { condtion = in_mathzone }),
 	s({ trig = "xii", snippetType = "autosnippet" }, t("x_{i}"), { condtion = in_mathzone }),
 	s({ trig = "xjj", snippetType = "autosnippet" }, t("x_{j}"), { condtion = in_mathzone }),
@@ -93,28 +171,16 @@ return {
 
 	-- symbols
 	s({ trig = "ooo", snippettype = "autosnippet" }, t("\\infty"), { condtion = in_mathzone }),
-	s("sum", {
-		-- { trig = "sum", snippettype = "autosnippet" }, {
-		c(1, {
-			t("\\sum"),
-			fmta("\\sum_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "n") }),
-		}),
-	}, { condtion = in_mathzone }),
 	s(
-		{ trig = "prod", snippettype = "autosnippet" },
-		{ c(2, { t("\\prod"), fmta("\\prod_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "N") }) }) },
+		"sum",
+		{ c(1, { t("\\sum"), fmta("\\sum_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "n") }) }) },
 		{ condtion = in_mathzone }
 	),
-	-- s(
-	-- 	{ trig = "sum", snippetType = "autosnippet" },
-	-- 	fmta("\\sum_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "N") }),
-	-- 	{ condtion = in_mathzone }
-	-- ),
-	-- s(
-	-- 	{ trig = "prod", snippetType = "autosnippet" },
-	-- 	fmta("\\prod_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "N") }),
-	-- 	{ condtion = in_mathzone }
-	-- ),
+	s(
+		"prod",
+		{ c(1, { t("\\prod"), fmta("\\prod_{<>=<>}^{<>}", { i(1, "i"), i(2, "1"), i(3, "N") }) }) },
+		{ condtion = in_mathzone }
+	),
 	s(
 		{ trig = "lim", snippetType = "autosnippet" },
 		fmta("\\lim_{ <> \\to <>} }", { i(1, "n"), i(2, "\\infty") }),

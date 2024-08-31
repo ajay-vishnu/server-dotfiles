@@ -13,19 +13,14 @@ return {
                     <>
                 \end{<>}
             ]],
-			{
-				i(1),
-				i(2),
-				i(3),
-				rep(4),
-			}
+			{ i(1), i(2), i(3), rep(4) }
 		)
 	),
 
 	s({ trig = "mk", snippetType = "autosnippet" }, fmta("$ <> $", { i(1) }), { condition = not in_mathzone }),
 
 	s(
-		{ trig = "dmk", snippetType = "autosnippet" },
+		{ trig = "dm", snippetType = "autosnippet" },
 		fmta(
 			[[
             $$
