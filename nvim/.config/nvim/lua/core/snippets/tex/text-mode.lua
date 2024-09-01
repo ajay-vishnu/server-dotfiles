@@ -3,6 +3,10 @@ local in_mathzone = function()
 	return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
 
+local in_textzone = function()
+	return vim.fn["vimtex#syntax#in_mathzone"]() == 0
+end
+
 return {
 	-- all snippets in text mode
 	s(
@@ -13,11 +17,12 @@ return {
                     <>
                 \end{<>}
             ]],
-			{ i(1), i(2), i(3), rep(4) }
+			{ i(1), i(2), i(3), rep(1) }
 		)
 	),
 
-	s({ trig = "mk", snippetType = "autosnippet" }, fmta("$ <> $", { i(1) }), { condition = not in_mathzone }),
+	-- Gateway to the ender world
+	s({ trig = "mk", snippetType = "autosnippet" }, fmta("$ <> $", { i(1) }), { condition = in_textzone }),
 
 	s(
 		{ trig = "dm", snippetType = "autosnippet" },
@@ -29,6 +34,6 @@ return {
             ]],
 			{ i(1) }
 		),
-		{ condition = not in_mathzone }
+		{ condition = in_textzone }
 	),
 }
