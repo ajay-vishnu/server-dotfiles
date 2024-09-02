@@ -2,6 +2,13 @@ local in_mathzone = function()
 	-- The `in_mathzone` function requires the VimTeX plugin
 	return vim.fn["vimtex#syntax#in_mathzone"]() == 1
 end
+local brackets = {
+	["("] = { "(", ")" },
+	["{"] = { "\\{", "\\}" },
+	["["] = { "[", "]" },
+	["a"] = { "\\langle", "\\rangle" },
+	["|"] = { "|", "|" },
+}
 
 return {
 	-- all snippets in math mode
@@ -497,28 +504,16 @@ return {
 	s({ trig = "{", snippetType = "autosnippet" }, fmta("{<>}", { i(1) }), { condition = in_mathzone }),
 	s({ trig = "[", snippetType = "autosnippet" }, fmta("[<>]", { i(1) }), { condition = in_mathzone }),
 	s(
-		{ trig = "lr(", snippetType = "autosnippet" },
-		fmta("\\left( <> \\right)", { i(1) }),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "lr{", snippetType = "autosnippet" },
-		fmta("\\left\\{ <> \\right\\}", { i(1) }),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "lr[", snippetType = "autosnippet" },
-		fmta("\\left[ <> \\right]", { i(1) }),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "lr|", snippetType = "autosnippet" },
-		fmta("\\left| <> \\right|", { i(1) }),
-		{ condition = in_mathzone }
-	),
-	s(
-		{ trig = "lra", snippetType = "autosnippet" },
-		fmta("\\left<< <> \\right>>", { i(1) }),
+		{ trig = "lr([%(%[%{%<a])", regTrig = true, snippetType = "autosnippet" },
+		fmta("\\left<> <> \\right<>", {
+			f(function(_, snip)
+				return brackets[snip.captures[1]][1]
+			end),
+			i(1),
+			f(function(_, snip)
+				return brackets[snip.captures[1]][2]
+			end),
+		}),
 		{ condition = in_mathzone }
 	),
 }
