@@ -36,16 +36,28 @@ export PASSWORD_STORE_DIR="$HOME/.password-store"
 
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export JAVA_HOME="$XDG_CONFIG_HOME/java/openjdk-20.0.2"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 export GOPATH="$XDG_DATA_HOME/go"
 export NVM_DIR="$HOME/.nvm"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-# export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 export STACK_ROOT="$XDG_DATA_HOME"/stack
 export STACK_XDG=1
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel 
 
+# Spring boot application
+export ALLOWED_HOST=$(hostname -I | awk '{print $1}'):8080
+export DATASOURCE_URL="jdbc:postgresql://localhost:5432/jewelleryaccounting"
+export DATASOURCE_USERNAME="ajayv"
+export DATASOURCE_PASSWORD="root"
+export REDIS_HOST="localhost"
+export REDIS_PORT="6379"
+# export REDIS_USERNAME=""
+# export REDIS_PASSWORD=""
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$CARGO_HOME/bin"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:/opt/apache-maven-3.9.4/bin"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/.bun/bin"
