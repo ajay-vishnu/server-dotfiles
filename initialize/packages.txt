@@ -27,9 +27,6 @@ go
 # Java toolchain as my college forces me to learn this language
 java-latest-openjdk-devel
 
-# Shell
-fish
-
 # nodejs for neovim
 nodejs
 
@@ -105,6 +102,9 @@ scoutfish
 
 #Chess database opening tree indexer
 chess_db
+
+#SQL clients
+postgres-client
 
 #Font configuration and customization library
 fontconfig-devel
