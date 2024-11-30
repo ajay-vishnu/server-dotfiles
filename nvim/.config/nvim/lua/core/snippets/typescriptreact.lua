@@ -4,6 +4,19 @@ local current_class_name = function()
 	return name_without_extension:sub(1, 1):upper() .. name_without_extension:sub(2)
 end
 
+local get_param = function()
+	local file_name = vim.split(vim.api.nvim_buf_get_name(0), "/", true)
+
+	if not file_name or #file_name == 0 then
+		Snacks.notifier.notify("Looks like you haven't saved the file", "warn")
+		return "id"
+	end
+
+	local param_name = file_name[#file_name - 1]:gsub("[%[%]]", "")
+
+	return param_name
+end
+
 return {
 	-- Defining class snippets
 	s(
@@ -26,6 +39,29 @@ return {
 				i(2, current_class_name()),
 				i(3),
 				rep(2),
+			}
+		)
+	),
+	s(
+		{ trig = "rafce", snippetType = "snippet" },
+		fmta(
+			[[
+            import React from 'react'
+
+            const Page = (<>) =>> {
+                return (
+                    <<div>><><</div>>
+                )
+            }
+
+            export default Page
+            ]],
+			{
+				c(1, {
+					i(1),
+					sn(nil, fmta([[{ params } : { params: { ]] .. get_param() .. [[: <> }}]], { i(1) })),
+				}),
+				i(2, "Page"),
 			}
 		)
 	),

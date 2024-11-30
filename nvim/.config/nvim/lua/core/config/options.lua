@@ -17,6 +17,7 @@ vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.fillchars = { foldopen = "", foldclose = "", fold = " ", foldsep = " ", diff = "╱", eob = " " }
 vim.opt.foldlevel = 99
+vim.opt.foldmethod = "indent"
 vim.opt.formatoptions = "jcroqlnt"
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.hlsearch = true

@@ -104,7 +104,7 @@ scoutfish
 chess_db
 
 #SQL clients
-postgres-client
+postgresql-client
 
 #Font configuration and customization library
 fontconfig-devel
