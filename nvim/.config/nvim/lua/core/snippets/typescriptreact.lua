@@ -48,20 +48,23 @@ return {
 			[[
             import React from 'react'
 
-            const Page = (<>) =>> {
+            const <> = (<>) =>> {
                 return (
                     <<div>><><</div>>
                 )
             }
 
-            export default Page
+            export default <>
             ]],
 			{
+				i(1, current_class_name()),
 				c(1, {
 					i(1),
 					sn(nil, fmta([[{ params } : { params: { ]] .. get_param() .. [[: <> }}]], { i(1) })),
+					sn(nil, t("{ children } : { children: React.ReactNode }")),
 				}),
-				i(2, "Page"),
+				rep(1),
+				rep(1),
 			}
 		)
 	),
