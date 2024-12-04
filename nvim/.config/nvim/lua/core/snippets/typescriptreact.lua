@@ -79,7 +79,7 @@ return {
 			return "</" .. snip.captures[1] .. ">"
 		end),
 	}),
-	s({ trig = "(%w+)<<", wordTrig = false, regTrig = false, snippetType = "autosnippet" }, {
+	s({ trig = "(%w+)/<", wordTrig = false, regTrig = false, snippetType = "autosnippet" }, {
 		f(function(_, snip)
 			return "<" .. snip.captures[1] .. "/>"
 		end),
@@ -91,5 +91,13 @@ return {
 	s({ trig = "info", snippetType = "autosnippet" }, fmta("console.info(<>)", { i(1) })),
 
 	-- Defining attribute snippets
-	s({ trig = "className" }, fmta('className="<>"', { i(1) })),
+	s({ trig = "cname", snippetType = "autosnippet" }, fmta('className="<>"', { i(1) })),
+
+	-- Defining code blocks
+	s(
+		{ trig = "[&u ]+" },
+		f(function(_, snip)
+			return "{/*" .. snip.captures[1] .. "*/}"
+		end)
+	),
 }

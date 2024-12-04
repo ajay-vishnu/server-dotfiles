@@ -117,3 +117,6 @@ glava
 
 #Manage GNOME Shell extensions
 gnome-extensions-app
+
+#Super-fast tool for making HTTP requests in terminal
+xh
