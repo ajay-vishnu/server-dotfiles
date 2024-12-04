@@ -42,6 +42,9 @@ android-tools
 # Downloading youtube videos and music
 yt-dlp
 
+# cat but with wings
+bat
+
 # Colorful ls alternative
 exa
 
@@ -103,7 +106,13 @@ scoutfish
 #Chess database opening tree indexer
 chess_db
 
-#SQL clients
+# Fuzzy finder
+fzf
+
+# ls replacement on fire
+eza
+
+#PostgreSQL client
 postgresql-client
 
 #Font configuration and customization library
@@ -120,3 +129,6 @@ gnome-extensions-app
 
 #Super-fast tool for making HTTP requests in terminal
 xh
+
+# A smarter cd replacement
+zoxide

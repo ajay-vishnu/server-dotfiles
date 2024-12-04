@@ -1,13 +1,29 @@
 alias :q='exit'
 
+# Set $PAGER if it hasn't been set yet. We need it below.
+# `:` is a builtin command that does nothing. We use it here to stop Zsh from
+# evaluating the value of our $expansion as a command.
+: ${PAGER:=batcat}
+
+# Associate file .extensions with programs.
+# This lets you open a file just by typing its name and pressing enter.
+# Note that the dot is implicit. So, `gz` below stands for files ending in .gz
+alias -s {css,gradle,html,js,json,md,patch,properties,txt,xml,yml}=$PAGER
+alias -s gz='gzip -l'
+alias -s {log,out}='batcat -F'
 
 # General shell commands
+alias ls='exa --icons'
 alias la='exa --oneline --icons --git --group-directories-first --long --all'
 alias treee='exa --tree'
 alias mv='mv -iv'
 alias cp='cp -iv'
 alias rm='trash -iv'
-# alias cd='z'
+alias cd='z'
+alias cat='batcat'
+
+# Use `< file` to quickly view the contents of any file.
+READNULLCMD=$PAGER  # Set the program to use for this.
 
 # Cloudflare Warp
 alias wcc='warp-cli connect'
