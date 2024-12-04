@@ -58,18 +58,18 @@ return {
             ]],
 			{
 				i(1, current_class_name()),
-				c(1, {
+				c(2, {
 					i(1),
 					sn(nil, fmta([[{ params } : { params: { ]] .. get_param() .. [[: <> }}]], { i(1) })),
-					sn(nil, t("{ children } : { children: React.ReactNode }")),
+					sn(nil, { t("{ children } : { children: React.ReactNode }"), i(1) }),
 				}),
-				rep(1),
+				i(3, rep(1)),
 				rep(1),
 			}
 		)
 	),
 
-	-- Defining attribute snippet
+	-- Defining attribute snippets
 	s({ trig = "(%w+)<", wordTrig = false, regTrig = false, snippetType = "autosnippet" }, {
 		f(function(_, snip)
 			return "<" .. snip.captures[1] .. ">"
@@ -87,4 +87,9 @@ return {
 
 	-- Defining console commands
 	s({ trig = "log", snippetType = "autosnippet" }, fmta("console.log(<>)", { i(1) })),
+	s({ trig = "warn", snippetType = "autosnippet" }, fmta("console.warn(<>)", { i(1) })),
+	s({ trig = "info", snippetType = "autosnippet" }, fmta("console.info(<>)", { i(1) })),
+
+	-- Defining attribute snippets
+	s({ trig = "className" }, fmta('className="<>"', { i(1) })),
 }
