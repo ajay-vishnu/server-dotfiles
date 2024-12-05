@@ -95,9 +95,9 @@ return {
 
 	-- Defining code blocks
 	s(
-		{ trig = "[&u ]+" },
+		{ trig = "([%u_]+) ", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
 		f(function(_, snip)
-			return "{/*" .. snip.captures[1] .. "*/}"
+			return "{/* " .. snip.captures[1] .. " */}"
 		end)
 	),
 }
