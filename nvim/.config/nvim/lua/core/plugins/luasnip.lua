@@ -56,6 +56,11 @@ return {
 		-- Lua snippets path
 		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/core/snippets/" })
 
+		-- Extend Javascript snippets to typescript
+		require("luasnip").filetype_extend("typescript", { "javascript" })
+		require("luasnip").filetype_extend("typescriptreact", { "javascript" })
+		require("luasnip.loaders.from_vscode").lazy_load()
+
 		-- Keybinds
 		vim.keymap.set({ "i", "s" }, "<C-l>", function()
 			if require("luasnip").expand_or_locally_jumpable() then

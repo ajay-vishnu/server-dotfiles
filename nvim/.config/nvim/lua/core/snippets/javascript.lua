@@ -31,7 +31,7 @@ return {
                     <>
                 );
             }
-            
+
             export default <>;
             ]],
 			{
@@ -86,9 +86,9 @@ return {
 	}),
 
 	-- Defining console commands
-	s({ trig = "log", snippetType = "autosnippet" }, fmta("console.log(<>)", { i(1) })),
-	s({ trig = "warn", snippetType = "autosnippet" }, fmta("console.warn(<>)", { i(1) })),
-	s({ trig = "info", snippetType = "autosnippet" }, fmta("console.info(<>)", { i(1) })),
+	s({ trig = "clog", snippetType = "autosnippet" }, fmta("console.log(<>)", { i(1) })),
+	s({ trig = "cwarn", snippetType = "autosnippet" }, fmta("console.warn(<>)", { i(1) })),
+	s({ trig = "cinfo", snippetType = "autosnippet" }, fmta("console.info(<>)", { i(1) })),
 
 	-- Defining attribute snippets
 	s({ trig = "cname", snippetType = "autosnippet" }, fmta('className="<>"', { i(1) })),
