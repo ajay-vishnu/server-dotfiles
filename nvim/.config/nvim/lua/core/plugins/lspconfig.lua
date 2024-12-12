@@ -12,6 +12,9 @@ return {
 		},
 	},
 	config = function()
+		vim.diagnostic.config({
+			virtual_text = false,
+		})
 		local on_attach = function(client, bufnr)
 			-- This is where a variable was first declared, or where a function is defined, etc.
 			vim.keymap.set(
