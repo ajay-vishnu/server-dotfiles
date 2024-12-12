@@ -169,9 +169,10 @@ return {
 				},
 			},
 			marksman = {},
-			pyright = {},
+			gopls = {},
 			taplo = {},
 			texlab = {},
+			pyright = {},
 		}
 
 		require("mason-lspconfig").setup({
