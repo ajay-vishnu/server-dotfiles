@@ -7,8 +7,7 @@ return {
 			style = "moon",
 		},
 		config = function()
-			vim.cmd([[colorscheme tokyonight-moon]])
-			vim.cmd([[highlight DiagnosticUnnecessary guifg=NONE]])
+			vim.cmd([[colorscheme tokyonight]])
 		end,
 	},
 }
