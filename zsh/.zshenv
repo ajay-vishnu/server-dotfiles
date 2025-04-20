@@ -54,6 +54,8 @@ export REDIS_HOST="localhost"
 export REDIS_PORT="6379"
 # export REDIS_USERNAME=""
 # export REDIS_PASSWORD=""
+export GMAIL_USERNAME="llawliet3190@gmail.com"
+export GMAIL_PASSCODE="aale tirp zbfx ojgb"
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$CARGO_HOME/bin"

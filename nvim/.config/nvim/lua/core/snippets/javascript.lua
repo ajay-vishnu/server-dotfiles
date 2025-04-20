@@ -85,6 +85,9 @@ return {
 		end),
 	}),
 
+	-- Defining hooks
+	s({ trig = "sthk", snippetType = "autosnippet" }, fmta("const [<>, set<>] = useState(<>);", { i(1), i(2), i(2) })),
+
 	-- Defining console commands
 	s({ trig = "clog", snippetType = "autosnippet" }, fmta("console.log(<>)", { i(1) })),
 	s({ trig = "cwarn", snippetType = "autosnippet" }, fmta("console.warn(<>)", { i(1) })),

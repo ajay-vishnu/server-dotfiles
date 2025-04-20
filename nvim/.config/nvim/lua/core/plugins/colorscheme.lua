@@ -1,13 +1,10 @@
 return {
 	{
-		"folke/tokyonight.nvim",
+		"ptdewey/monalisa-nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {
-			style = "moon",
-		},
 		config = function()
-			vim.cmd([[colorscheme tokyonight-moon]])
+			vim.cmd([[colorscheme monalisa]])
 			vim.cmd([[highlight DiagnosticUnnecessary guifg=NONE]])
 		end,
 	},

@@ -19,6 +19,8 @@ return {
 			html = { "prettier" },
 			css = { "prettier" },
 			javascript = { "prettier" },
+			typescript = { "prettier" },
+			typescriptreact = { "prettier" },
 			lua = { "stylua" },
 			markdown = { "prettier" },
 			python = { "isort", "black" },

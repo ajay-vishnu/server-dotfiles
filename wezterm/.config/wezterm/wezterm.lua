@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.check_for_updates = false
-config.color_scheme = "Tokyo Night Moon"
+config.color_scheme = "hardhacker"
 config.enable_scroll_bar = true
 config.enable_wayland = false
 config.font = wezterm.font("Comic Mono")
