@@ -13,6 +13,9 @@ export SHELL=/bin/zsh
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# Set the EULA terms to YES
+export ACCEPT_EULA=Y
+
 # zsh specific variables
 ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 HISTFILE="$XDG_CACHE_HOME/.zhistory"
@@ -56,6 +59,12 @@ export REDIS_PORT="6379"
 # export REDIS_PASSWORD=""
 export GMAIL_USERNAME="llawliet3190@gmail.com"
 export GMAIL_PASSCODE="aale tirp zbfx ojgb"
+export JWT_SECRET="eduaUVZ2XPLUPICdDG3CQjDrlDPJ6rXmCQ0W73RCuzXN3nmyULgF4lxb87wtyNo3jc61AxypL1wLg3qQCDYs9ABf9dbNDTAmxnmhd9i62PVdkmURMj01ch6kjZ8LHujW"
+export REFRESH_SECRET="GoVtOvJczkn9Hj0Q3OAcsJsQQWrtohcQAVza1vLC7hqANEm40pWZ9DK322RWnA21A2bkgJhLKkcXuxgUtxlDOtKUegC7GOwAIaZ2zXZDuwucfS6pfrZz3QVMIhGrWSKK"
+
+# Microsoft SQL Server Drivers
+export PATH="$PATH:/opt/mssql-tools18/bin"
+
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$CARGO_HOME/bin"

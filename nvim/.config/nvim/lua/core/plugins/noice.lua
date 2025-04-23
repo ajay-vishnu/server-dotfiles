@@ -8,7 +8,6 @@ return {
 	opts = {
 		cmdline = {
 			format = {
-				telescope = { pattern = { "^:%s*Telescope%s+" }, icon = " " },
 				man = { pattern = { "^:%s*Man%s+" }, icon = " " },
 			},
 		},

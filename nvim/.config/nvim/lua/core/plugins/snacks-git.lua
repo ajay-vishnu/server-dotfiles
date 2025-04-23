@@ -2,17 +2,15 @@ return {
 	"folke/snacks.nvim",
 	lazy = false,
 	priority = 1000,
-	opts = {
-		gitbrowse = { notify = true },
-	},
+	opts = {},
 	keys = {
 		{
-			"<leader>go",
+			"<leader>gbl",
 			function()
-				Snacks.gitbrowse.open()
+				Snacks.git.blame_line()
 			end,
 			mode = { "n" },
-			desc = "Open Remote File",
+			desc = "Blame current line",
 		},
 	},
 }

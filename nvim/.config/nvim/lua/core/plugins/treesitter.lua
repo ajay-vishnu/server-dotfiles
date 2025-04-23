@@ -1,23 +1,34 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = { "BufReadPre", "BufNewFile" },
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		dependencies = {
+			"windwp/nvim-ts-autotag",
+			opts = {},
+		},
 		build = ":TSUpdate",
 		opts = {
 			ensure_installed = {
 				"bash",
-				"java",
-				"python",
+				"css",
+				"gitignore",
+				"html",
+				"javascript",
+				"json5",
+				"latex",
 				"lua",
 				"luadoc",
+				"markdown",
+				"markdown_inline",
+				"python",
+				"regex",
+				"scss",
+				"toml",
 				"vim",
 				"vimdoc",
-				"markdown",
-				"html",
-				"css",
-				"javascript",
-				"json",
-				"gitignore",
+				"toml",
+				"typescript",
+				"yaml",
 			},
 			autoinstall = true,
 			highlight = { enable = true },
@@ -25,22 +36,16 @@ return {
 			incremental_selection = {
 				enable = true,
 				keymaps = {
-					init_selection = "<C-space>",
-					node_incremental = "<C-space>",
+					init_selection = "<C-Space>",
+					node_incremental = "<C-Space>",
 					scope_incremental = false,
-					node_decremental = "<bs>",
+					node_decremental = "<C-S-Space>",
 				},
 			},
 		},
 		config = function(_, opts)
 			require("nvim-treesitter.install").prefer_git = true
-			---@diagnostic disable-next-line: missing-fields
 			require("nvim-treesitter.configs").setup(opts)
 		end,
-	},
-	{
-		"windwp/nvim-ts-autotag",
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-		opts = {},
 	},
 }

@@ -19,11 +19,18 @@ return {
 						desc = "New File",
 						key = "n",
 						action = function()
-							vim.ui.input({ prompt = "Enter Filename" }, function(str)
-								if str ~= "" then
-									vim.cmd("ene | w " .. str .. " | startinsert")
-								elseif str == "" then
-									vim.cmd("ene | startinsert")
+							vim.ui.input({
+								prompt = "Enter Filename",
+								icon = " ",
+								icon_hl = "SnacksInputIcon",
+								expand = true,
+							}, function(str)
+								if str ~= nil then
+									if str ~= "" then
+										vim.cmd("ene | w " .. str .. " | startinsert")
+									elseif str == "" then
+										vim.cmd("ene | startinsert")
+									end
 								end
 							end)
 						end,
@@ -33,7 +40,7 @@ return {
 						desc = "Find Files",
 						key = "f",
 						action = function()
-							require("telescope.builtin").find_files()
+							Snacks.picker.files()
 						end,
 					},
 					{
@@ -41,14 +48,16 @@ return {
 						desc = "Recent Files",
 						key = "r",
 						action = function()
-							require("telescope.builtin").oldfiles()
+							Snacks.picker.recent()
 						end,
 					},
 					{
 						icon = " ",
 						desc = "Restore Last Session",
 						key = "s",
-						action = ":SessionManager load_last_session",
+						action = function()
+							require("persistence").load({ last = true })
+						end,
 					},
 					{
 						icon = " ",
@@ -59,11 +68,32 @@ return {
 						end,
 					},
 					{
-						icon = " ",
-						desc = "Open Dev Folder",
-						key = "t",
+						key = "D",
+						hidden = true,
 						action = function()
-							require("yazi").yazi(nil, vim.fn.expand("$HOME/Dev/"))
+							Snacks.picker.files({ cwd = vim.fn.expand("$HOME/.dotfiles/") })
+						end,
+					},
+					{
+						key = "o",
+						hidden = true,
+						action = function()
+							require("yazi").yazi(nil, vim.fn.expand("$HOME/Stuff/Websites/ojasb.xyz/"))
+						end,
+					},
+					{
+						icon = "󰩪 ",
+						desc = "Open Vaults",
+						key = "v",
+						action = function()
+							require("yazi").yazi(nil, vim.fn.expand("$HOME/Stuff/Vaults/"))
+						end,
+					},
+					{
+						key = "V",
+						hidden = true,
+						action = function()
+							Snacks.picker.files({ cwd = "$HOME/Stuff/Vaults/" })
 						end,
 					},
 					{
@@ -72,6 +102,13 @@ return {
 						key = "c",
 						action = function()
 							require("yazi").yazi(nil, vim.fn.expand("$HOME/.config/nvim/"))
+						end,
+					},
+					{
+						key = "C",
+						hidden = true,
+						action = function()
+							Snacks.picker.files({ cwd = "$HOME/.config/nvim/" })
 						end,
 					},
 					{
@@ -86,16 +123,17 @@ return {
 						key = "q",
 						action = ":qa",
 					},
+					{
+						key = "P",
+						hidden = true,
+						action = function()
+							Snacks.picker.projects()
+						end,
+					},
 				},
 			},
 			sections = {
 				{ section = "header" },
-				-- {
-				-- 	section = "terminal",
-				-- 	cmd = "cmatrix -B -C magenta -u 10",
-				-- 	height = 10,
-				-- 	padding = 3,
-				-- },
 				{
 					section = "keys",
 					gap = 1,
@@ -105,6 +143,16 @@ return {
 					section = "startup",
 				},
 			},
+		},
+	},
+	keys = {
+		{
+			"<leader>ud",
+			function()
+				Snacks.dashboard.open()
+			end,
+			mode = { "n" },
+			desc = "Open Dashboard",
 		},
 	},
 }

@@ -16,21 +16,27 @@ return {
 	opts = {
 		formatters_by_ft = {
 			bash = { "shfmt" },
-			html = { "prettier" },
+			cpp = { "ast-grep" },
 			css = { "prettier" },
+			html = { "prettier" },
 			javascript = { "prettier" },
-			typescript = { "prettier" },
-			typescriptreact = { "prettier" },
+			json = { "prettier" },
 			lua = { "stylua" },
 			markdown = { "prettier" },
 			python = { "isort", "black" },
+			scss = { "prettier" },
 			shell = { "shfmt" },
+			svg = { "prettier" },
+			tex = { "tex-fmt" },
 			toml = { "taplo" },
+			typescript = { "prettier" },
+			typescriptreact = { "prettier" },
+			yaml = { "prettier" },
 		},
 		format_on_save = function(bufnr)
-			local disable_filetypes = { c = true, cpp = true }
+			local disable_filetypes = { c = true }
 			return {
-				timeout_ms = 500,
+				timeout_ms = 5000,
 				lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
 			}
 		end,

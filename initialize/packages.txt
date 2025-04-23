@@ -1,134 +1,55 @@
-# Flatpak for later use in installing of applications
-flatpak
-
-# Editor
-neovim
-python3-neovim
-
-# Common tools for all dev
-strace
-ltrace
-radare2
-
-# C/C++ Toolchain
-gcc
-clang
-clang-tools-extra
-valgrind
-gdb
-cmake
-make
-meson
-ninja-build
-
-# Go Toolchain
-go
-
-# Java toolchain as my college forces me to learn this language
-java-latest-openjdk-devel
-
-# nodejs for neovim
-nodejs
-
-# Backup and Recovery tool
-timeshift
-
-# Chrome dev as I use that (enable google-chrome rpmfusion repo)
-google-chrome-unstable
-
-# Android tools (adb, fastboot, etc.)
-android-tools
-
-# Downloading youtube videos and music
-yt-dlp
-
-# cat but with wings
-bat
-
-# Colorful ls alternative
-exa
-
-# Beautiful shell config for fish
-starship
-
-# clipboard for wayland
-wl-clipboard
-
-# for chsh
-util-linux-user
-
-# Offline documentation browser
-zeal
-
-# Dotfiles managing using symlinks
-stow
-
-#Gnome tweaks for getting some extra tweaks
-gnome-tweaks
-
-#Bat, a cat clone with extra wings
-bat
-
-#Shell script analysis tool
-ShellCheck
-
-#The uncompromising code formatter
-black
-
-#Python utility / library to sort Python imports
-python3-isort
-
-#Shell formatter
-shfmt
-
-#Tool for static C/C++ code analysis
-cppcheck
-
-#Super-fast text searching tool (ag)
-the_silver_searcher
-
-#Portal frontend service to flatpak, will help in screensharing
-#Backend implementation for xdg-desktop-portal using GNOME
-xdg-desktop-portal
-
-#Chess game for GNOME
-pychess
-
-#Powerful open source chess engine
-stockfish
-
-#Modular and flexible ORM library for python
-python3-sqlalchemy
-
-#Chess Query Engine
-scoutfish
-
-#Chess database opening tree indexer
-chess_db
-
-# Fuzzy finder
-fzf
-
-# ls replacement on fire
-eza
-
-#PostgreSQL client
-postgresql-client
-
-#Font configuration and customization library
-fontconfig-devel
-
-#Development files for libxcb
-libxcb-devel
-
-#OpenGL audio spectrum audio visualizer
-glava
-
-#Manage GNOME Shell extensions
-gnome-extensions-app
-
-#Super-fast tool for making HTTP requests in terminal
-xh
-
-# A smarter cd replacement
-zoxide
+android-tools                           # Android tools (adb, fastboot, etc.)
+ark                                     # Archiving tool by KDE
+bat                                     # Bat, a cat clone with extra wings
+biber                                   # A bibliography management tool for LaTeX
+ca-certificates                         # Certificates
+chess_db                                # Chess database opening tree indexer
+cloudflare-warp-bin                     # Cloudflare Warp Client
+curl                                    # CURL
+exa                                     # Colorful ls alternative
+eza                                     # ls replacement on fire
+fd                                      # A fast find replacement
+ffmpeg                                  # Complete solution to record, convert and stream audio and video
+ffmpegthumbnailer                       # A utility to produce video thumbnails for yazi
+ffmpegthumbs                            # FFmpeg-based thumbnail creator for video files in Dolphin
+flatpak                                 # Enables installing flatpack
+fzf                                     # Fuzzy finder
+gcc                                     # C/C++ Toolchain
+gdb                                     # Debugger for C/C++
+git                                     # A neat version control system
+git-delta                               # Syntax-highlighting pager for git and diff output
+go                                      # Go Toolchain
+inkscape                                # Professional vector graphics editor
+java-latest-openjdk-devel               # Java toolchain
+jq                                      # A commandline JSON parser
+lazygit                                 # A tui interface for git
+lua                                     # A fast programming language designed for extensibility of other applications
+luarocks                                # Optional dependency for lazy in nvim
+man-db                                  # A utility to read man pages
+neovide                                 # A graphical interface for neovide
+neovim                                  # A powerful text editor
+newsboat                                # An OP TUI RSS feed reader
+nodejs                                  # I/O for javascript
+p7zip                                   # Command-line file archiver with high compression ratio
+pandoc-bin                              # A document converter tool
+python-pip                              # A tool for installing python packages
+python3-sqlalchemy                      # Modular and flexible ORM library for python
+scoutfish                               # Chess Query Engine
+starship                                # Beautiful shell config for fish
+stockfish                               # Powerful open source chess engine
+stow                                    # Dotfiles managing using symlinks
+texlive                                 # LaTeX fundamental packages
+texlive-langenglish                     # Texlive tools for non-Latin languages
+tmate                                   # Utility to access remote terminal
+trash-cli                               # A cli trash manager
+tree-sitter-cli                         # CLI tool for developing, testing, and using Tree-sitter parsers
+ueberzug                                # A program that allows drawing images on terminals
+ueberzugpp                              # A program that allows drawing images on terminals
+unarchiver                              # Required for archive preview in yazi
+wget                                    # A file downloading utility
+wl-clipboard                            # clipboard for wayland
+xh                                      # Super-fast tool for making HTTP requests in terminal
+yt-dlp                                  # Downloading youtube videos and music
+zeal                                    # Offline documentation browser
+zoxide                                  # A smarter cd replacement
+zsh                                     # An advanced and programmable command interpreter for UNIX
