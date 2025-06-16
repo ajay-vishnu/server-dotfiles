@@ -5,7 +5,7 @@ return {
 	opts = {},
 	keys = {
 		{
-			"<leader>gbl",
+			"<leader>gb",
 			function()
 				Snacks.git.blame_line()
 			end,

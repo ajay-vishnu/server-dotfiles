@@ -23,7 +23,19 @@ return {
 			desc = "Toggle Terminal",
 		},
 		{
-			"<leader>xx",
+			"<leader>th",
+			function()
+				Snacks.terminal.toggle(nil, { cwd = vim.fn.getcwd(), win = { position = "left" } })
+			end,
+		},
+		{
+			"<leader>tj",
+			function()
+				Snacks.terminal.toggle(nil, { cwd = vim.fn.getcwd(), auto_close = false, win = { position = "bottom" } })
+			end,
+		},
+		{
+			"<leader>px",
 			function()
 				Snacks.terminal.toggle("python3 " .. vim.fn.expand("%"), { cwd = vim.fn.getcwd() })
 			end,

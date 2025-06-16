@@ -11,9 +11,28 @@ return {
 			mode = { "n", "v" },
 			desc = "Code Format",
 		},
+		{
+			"<leader>ci",
+			"<cmd>ConformInfo<CR>",
+			mode = { "n" },
+			desc = "Conform Info",
+		},
 	},
 	main = "conform",
 	opts = {
+		formatters = {
+			["black"] = {
+				inherit = true,
+				prepend_args = { "--fast" },
+			},
+			["tex-fmt"] = {
+				inherit = true,
+				prepend_args = {
+					"--nowrap",
+					"--tabsize=4",
+				},
+			},
+		},
 		formatters_by_ft = {
 			bash = { "shfmt" },
 			cpp = { "ast-grep" },

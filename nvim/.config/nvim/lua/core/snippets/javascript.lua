@@ -5,7 +5,7 @@ local current_class_name = function()
 end
 
 local get_param = function()
-	local file_name = vim.split(vim.api.nvim_buf_get_name(0), "/", true)
+	local file_name = vim.split(vim.api.nvim_buf_get_name(0), "/")
 
 	if not file_name or #file_name == 0 then
 		Snacks.notifier.notify("Looks like you haven't saved the file", "warn")

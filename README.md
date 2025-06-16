@@ -1,13 +1,17 @@
-# Dotfiles 
+# Dotfiles
+
 My development environment dotfiles and configs
 
 # Notes
+
 Add the following options in your `/etc/fstab` to have better lifetime for your SSD
+
 - `defaults,noatime,discard=async`
-> Scripts work only on fedora
-> Config files should work regardless of the distro you are using
+  > Scripts work only on fedora
+  > Config files should work regardless of the distro you are using
 
 ## Procedure to install my dotfiles (Should work universally)
+
 1. Clone the repo
 
 ```bash
@@ -32,4 +36,8 @@ chmod u+x ./0_system_setup.sh
 ```bash
 chmod u+x ./1_packages_setup.sh
 ./1_packages_setup.sh
+```
+
+```bash
+scp -pr -C -o 'CompressionLevel 9' -o 'IPQoS throughput' -c aes128-ctr <source-file> <dst-file>
 ```

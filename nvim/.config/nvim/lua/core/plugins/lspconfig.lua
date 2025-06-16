@@ -14,8 +14,7 @@ return {
 					id = "lsp_progress",
 					title = "LSP Progress",
 					opts = function(notif)
-						notif.icon = ev.data.params.value.kind == "end" and " "
-							or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
+						notif.icon = ev.data.params.value.kind == "end" and " " or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
 					end,
 				})
 			end,
@@ -52,12 +51,7 @@ return {
 
 			-- WARN: This is not Goto Definition, this is Goto Declaration.
 			--  For example, in C this would take you to the header.
-			vim.keymap.set(
-				"n",
-				"<leader>lD",
-				vim.lsp.buf.declaration,
-				{ noremap = true, silent = true, buffer = bufnr, desc = "Show LSP Declarations" }
-			)
+			vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { noremap = true, silent = true, buffer = bufnr, desc = "Show LSP Declarations" })
 
 			-- Execute a code action, usually your cursor needs to be on top of an error
 			-- or a suggestion from your LSP for this to activate.
@@ -70,20 +64,10 @@ return {
 
 			-- Rename the variable under your cursor.
 			--  Most Language Servers support renaming across files, etc.
-			vim.keymap.set(
-				"n",
-				"<leader>lr",
-				vim.lsp.buf.rename,
-				{ noremap = true, silent = true, buffer = bufnr, desc = "LSP Rename" }
-			)
+			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, { noremap = true, silent = true, buffer = bufnr, desc = "LSP Rename" })
 
 			-- Display all the diagnostics in the current line in a small neat window.
-			vim.keymap.set(
-				"n",
-				"<leader>dd",
-				vim.diagnostic.open_float,
-				{ noremap = true, silent = true, buffer = bufnr, desc = "Show Line Diagnostics" }
-			)
+			vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float, { noremap = true, silent = true, buffer = bufnr, desc = "Show Line Diagnostics" })
 
 			-- Fuzzy find all the diagnostics in the current buffer.
 			vim.keymap.set("n", "<leader>db", function()
@@ -92,12 +76,7 @@ return {
 
 			-- Display the documentation of the object you  are hovering on. Pressing K in the normal mode does the same thing as well.
 			-- Just move to get rid of it, press K to enter inside the documentation window and explore there.
-			vim.keymap.set(
-				"n",
-				"<leader>lh",
-				vim.lsp.buf.hover,
-				{ noremap = true, silent = true, buffer = bufnr, desc = "Hovered Object Documentation" }
-			)
+			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, { noremap = true, silent = true, buffer = bufnr, desc = "Hovered Object Documentation" })
 
 			-- Restart LSP.
 			vim.keymap.set(
@@ -127,9 +106,13 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 		local servers = {
+			basedpyright = {
+				filetypes = { "python" },
+			},
 			bash_ls = {},
 			cssls = {},
 			html = {},
+			lean_ls = {},
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -143,15 +126,13 @@ return {
 				},
 			},
 			marksman = {},
-			pyright = {
-				filetypes = { "python" },
-			},
 			taplo = {},
 			texlab = {},
 		}
 
 		require("mason-lspconfig").setup({
 			ensure_installed = {},
+			automatic_enable = true,
 			automatic_installation = true,
 			handlers = {
 				function(server_name)

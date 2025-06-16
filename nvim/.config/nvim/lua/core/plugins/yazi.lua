@@ -1,30 +1,29 @@
 return {
-    "mikavilpas/yazi.nvim",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-    },
-    keys = {
-        -- 👇 in this section, choose your own keymappings!
-        {
-            "<leader>e",
-            function()
-                require("yazi").yazi()
-            end,
-            desc = "Open the file manager",
-        },
-        {
-            -- Open in the current working directory
-            "<leader>E",
-            function()
-                require("yazi").yazi(nil, vim.fn.expand("$HOME/"))
-            end,
-            desc = "Open the file manager in nvim's working directory",
-        },
-    },
-    opts = {
-        open_for_directories = true,
-    },
-    config = function()
-        require("yazi").setup()
-    end,
+	"mikavilpas/yazi.nvim",
+	event = { "VeryLazy" },
+	version = "6.11.0",
+	dependencies = {
+		"folke/snacks.nvim",
+	},
+	keys = {
+		-- 👇 in this section, choose your own keymappings!
+		{
+			"<leader>e",
+			function()
+				require("yazi").yazi()
+			end,
+			mode = { "n", "v" },
+			desc = "Open the file manager",
+		},
+	},
+	opts = {
+		open_for_directories = true,
+		open_multiple_tabs = true,
+		floating_window_scaling_factor = 0.8,
+		keymaps = {
+			open_file_in_vertical_split = "<c-v>",
+			open_file_in_horizontal_split = "<c-h>",
+			open_file_in_tab = "<c-t>",
+		},
+	},
 }
