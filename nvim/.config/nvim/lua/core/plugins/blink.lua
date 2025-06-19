@@ -9,11 +9,11 @@ return {
 				menu = {
 					auto_show = true,
 				},
-				keymap = {
-					-- ["<C-y>"] = { "select_and_accept", "fallback" },
-					-- ["<C-k>"] = { "select_prev", "fallback" },
-					-- ["<C-j>"] = { "select_next", "fallback" },
-				},
+			},
+			keymap = {
+				["<C-y>"] = { "select_and_accept", "fallback" },
+				["<C-k>"] = { "select_prev", "fallback" },
+				["<C-j>"] = { "select_next", "fallback" },
 			},
 		},
 		snippets = { preset = "luasnip" },
