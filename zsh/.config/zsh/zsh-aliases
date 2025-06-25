@@ -21,6 +21,7 @@ alias cp='cp -iv'
 alias rm='trash -iv'
 alias cd='z'
 alias cat='batcat'
+alias hledger='hledger --file=$HOME/finance/AY-2025-26.journal'
 
 # Use `< file` to quickly view the contents of any file.
 READNULLCMD=$PAGER  # Set the program to use for this.

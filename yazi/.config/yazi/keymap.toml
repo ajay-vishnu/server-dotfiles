@@ -77,6 +77,10 @@ prepend_keymap = [
     "g",
     "w",
   ], run = "cd ~/Dev/", desc = "the dev directory" },
+  { on = [
+    "g",
+    "f",
+  ], run = "cd ~/finance/", desc = "the finance directory" },
 
   # Toggle
   { on = [
