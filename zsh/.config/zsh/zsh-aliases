@@ -14,7 +14,7 @@ alias -s {log,out}='batcat -F'
 
 # General shell commands
 alias ls='exa --icons'
-alias la='exa --oneline --icons --git --group-directories-first --long --all'
+alias la='exa --oneline --icons --git --group-directories-first --long --all -lh'
 alias treee='exa --tree'
 alias mv='mv -iv'
 alias cp='cp -iv'
