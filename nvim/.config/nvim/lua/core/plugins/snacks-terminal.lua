@@ -37,7 +37,7 @@ return {
 		{
 			"<leader>px",
 			function()
-				Snacks.terminal.toggle("python3 " .. vim.fn.expand("%"), { cwd = vim.fn.getcwd() })
+				Snacks.terminal.toggle("python3 " .. vim.fn.expand("%"), { cwd = vim.fn.getcwd(), auto_close = false })
 			end,
 			mode = { "n", "t" },
 			ft = "python",

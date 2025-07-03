@@ -126,6 +126,9 @@ return {
 				},
 			},
 			marksman = {},
+			prettier = {
+				filetypes = { "json" },
+			},
 			taplo = {},
 			texlab = {},
 		}
