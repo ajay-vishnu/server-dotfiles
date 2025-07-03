@@ -48,20 +48,6 @@ export STACK_ROOT="$XDG_DATA_HOME"/stack
 export STACK_XDG=1
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel 
 
-# Spring boot application
-export ALLOWED_HOST=$(hostname -I | awk '{print $1}'):8080
-export DATASOURCE_URL="jdbc:postgresql://localhost:5432/jewelleryaccounting"
-export DATASOURCE_USERNAME="ajayv"
-export DATASOURCE_PASSWORD="root"
-export REDIS_HOST="localhost"
-export REDIS_PORT="6379"
-# export REDIS_USERNAME=""
-# export REDIS_PASSWORD=""
-export GMAIL_USERNAME="llawliet3190@gmail.com"
-export GMAIL_PASSCODE="aale tirp zbfx ojgb"
-export JWT_SECRET="eduaUVZ2XPLUPICdDG3CQjDrlDPJ6rXmCQ0W73RCuzXN3nmyULgF4lxb87wtyNo3jc61AxypL1wLg3qQCDYs9ABf9dbNDTAmxnmhd9i62PVdkmURMj01ch6kjZ8LHujW"
-export REFRESH_SECRET="GoVtOvJczkn9Hj0Q3OAcsJsQQWrtohcQAVza1vLC7hqANEm40pWZ9DK322RWnA21A2bkgJhLKkcXuxgUtxlDOtKUegC7GOwAIaZ2zXZDuwucfS6pfrZz3QVMIhGrWSKK"
-
 # Microsoft SQL Server Drivers
 export PATH="$PATH:/opt/mssql-tools18/bin"
 
