@@ -1,323 +1,140 @@
-# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
-# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+[mgr]
+cwd = { fg = "#e8d5b7", italic = true }
 
-# vim:fileencoding=utf-8:foldmethod=marker
+# Hovered - warm earth tone highlight
+hovered = { bg = "#352f24" }
+preview_hovered = { bg = "#352f24" }
 
-# : Manager {{{
+# Find - using MonaLisa gold tones
+find_keyword = { fg = "#1e1c18", bg = "#e2b55f", bold = true }
+find_position = { fg = "#7a8471", bg = "#2b271f", bold = true }
 
-[manager]
-cwd = { fg = "cyan" }
+# Markers - artistic inspired colors
+marker_copied = { fg = "#8a7c4a", bg = "#8a7c4a" }
+marker_cut = { fg = "#c46f41", bg = "#c46f41" }
+marker_marked = { fg = "#6d7a72", bg = "#6d7a72" }
+marker_selected = { fg = "#b08080", bg = "#b08080" }
 
-# Hovered
-hovered         = { fg = "black", bg = "lightmagenta" }
-preview_hovered = { underline = true }
+# Count - warm harmonious backgrounds
+count_copied = { fg = "#e8d5b7", bg = "#5d5242" }
+count_cut = { fg = "#e8d5b7", bg = "#4f4535" }
+count_selected = { fg = "#e8d5b7", bg = "#423a2b" }
 
-# Find
-find_keyword  = { fg = "yellow", italic = true }
-find_position = { fg = "blue", bg = "reset", italic = true }
-
-# Marker
-marker_selected = { fg = "lightgreen",  bg = "lightgreen" }
-marker_copied   = { fg = "lightyellow", bg = "lightyellow" }
-marker_cut      = { fg = "lightred",    bg = "lightred" }
-
-# Tab
-tab_active   = { fg = "black", bg = "lightmagenta" }
-tab_inactive = { fg = "white", bg = "darkgray" }
-tab_width    = 1
-
-# Border
+# Border - elegant earth tone
 border_symbol = "│"
-border_style  = { fg = "gray" }
+border_style = { fg = "#7d6f61" }
 
-# Highlighting
-syntect_theme = ""
+[tabs]
+tab_active = { fg = "#e8d5b7", bg = "#352f24" }
+tab_inactive = { fg = "#6b5d4f", bg = "#1e1c18" }
 
-# : }}}
+[mode]
+normal_main = { fg = "#1e1c18", bg = "#b08080", bold = true }
+normal_alt = { fg = "#b08080", bg = "#423a2b" }
 
+select_main = { fg = "#1e1c18", bg = "#6d7a72", bold = true }
+select_alt = { fg = "#6d7a72", bg = "#423a2b" }
 
-# : Status {{{
+unset_main = { fg = "#1e1c18", bg = "#e2b55f", bold = true }
+unset_alt = { fg = "#e2b55f", bg = "#423a2b" }
 
 [status]
-separator_open  = ""
-separator_close = ""
-separator_style = { fg = "darkgray", bg = "darkgray" }
+separator_open = ""
+separator_close = ""
 
-# Mode
-mode_normal = { fg = "black", bg = "lightmagenta", bold = true }
-mode_select = { fg = "black", bg = "lightgreen", bold = true }
-mode_unset  = { fg = "black", bg = "lightblue", bold = true }
+# Progress - MonaLisa inspired
+progress_label = { fg = "#7d6f61", bold = true }
+progress_normal = { fg = "#1e1c18" }
+progress_error = { fg = "#c46f41" }
 
-# Progress
-progress_label  = { bold = true }
-progress_normal = { fg = "magenta", bg = "black" }
-progress_error  = { fg = "red", bg = "black" }
+# Permissions - artistic color coding
+perm_type = { fg = "#b08080" }
+perm_read = { fg = "#e2b55f" }
+perm_write = { fg = "#c46f41" }
+perm_exec = { fg = "#8a7c4a" }
+perm_sep = { fg = "#5d5242" }
 
-# Permissions
-permissions_t = { fg = "lightgreen" }
-permissions_r = { fg = "lightyellow" }
-permissions_w = { fg = "lightred" }
-permissions_x = { fg = "lightcyan" }
-permissions_s = { fg = "darkgray" }
-
-# : }}}
-
-
-# : Select {{{
-
-[select]
-border   = { fg = "magenta" }
-active   = { fg = "blue" }
-inactive = {}
-
-# : }}}
-
-
-# : Input {{{
+[pick]
+border = { fg = "#7d6f61" }
+active = { fg = "#e8d5b7", bg = "#4f4535" }
+inactive = { fg = "#e8d5b7" }
 
 [input]
-border   = { fg = "magenta" }
-title    = {}
-value    = {}
-selected = { reversed = true }
-
-# : }}}
-
-
-# : Completion {{{
+border = { fg = "#7a8471" }
+title = { fg = "#7a8471" }
+value = { fg = "#e2b55f" }
+selected = { bg = "#4f4535" }
 
 [completion]
-border   = { fg = "magenta" }
-active   = { bg = "darkgray" }
-inactive = {}
+border = { fg = "#7a8471" }
+active = { fg = "#e8d5b7", bg = "#4f4535" }
+inactive = { fg = "#e8d5b7" }
 
-# Icons
-icon_file    = ""
-icon_folder  = ""
-icon_command = ""
-
-# : }}}
-
-
-# : Tasks {{{
+icon_file = ""
+icon_folder = ""
+icon_command = ""
 
 [tasks]
-border  = { fg = "magenta" }
-title   = {}
-hovered = { underline = true }
-
-# : }}}
-
-
-# : Which {{{
+border = { fg = "#7d6f61" }
+title = { fg = "#7d6f61" }
+hovered = { fg = "#e8d5b7", bg = "#4f4535" }
 
 [which]
-cols            = 3
-mask            = { bg = "black" }
-cand            = { fg = "lightcyan" }
-rest            = { fg = "darkgray" }
-desc            = { fg = "blue" }
-separator       = "  "
-separator_style = { fg = "darkgray" }
+cols = 3
+mask = { bg = "#1e1c18" }
+cand = { fg = "#7a8471" }
+rest = { fg = "#b08080" }
+desc = { fg = "#6d7a72" }
+separator = " ➜ "
+separator_style = { fg = "#8f8173" }
 
-# : }}}
+[confirm]
+border = { fg = "#7a8471" }
+title = { fg = "#7d6f61" }
+content = {}
+list = {}
+btn_yes = { bg = "#4f4535" }
+btn_no = {}
+btn_labels = ["  [Y]es  ", "  (N)o  "]
 
+[spot]
+border = { fg = "#7d6f61" }
+title = { fg = "#7d6f61" }
 
-# : Help {{{
+[notify]
+title_info = { fg = "#7a8471" }
+title_warn = { fg = "#e2b55f" }
+title_error = { fg = "#c46f41" }
+
+icon_error = ""
+icon_warn = ""
+icon_info = ""
 
 [help]
-on      = { fg = "blue" }
-exec    = { fg = "cyan" }
-desc    = { fg = "gray" }
-hovered = { bg = "darkgray", bold = true }
-footer  = { fg = "black", bg = "white" }
-
-# : }}}
-
-
-# : File-specific styles {{{
+on = { fg = "#8a7c4a" }
+run = { fg = "#6d7a72" }
+hovered = { bg = "#352f24" }
+footer = { fg = "#e8d5b7", bg = "#1e1c18" }
 
 [filetype]
-
 rules = [
-    # Images
-    { mime = "image/*", fg = "cyan" },
+  # Images - warm gold like MonaLisa's hair
+  { mime = "image/*", fg = "#e2b55f" },
 
-    # Videos
-    { mime = "video/*", fg = "yellow" },
-    { mime = "audio/*", fg = "yellow" },
+  # Media - artistic purple
+  { mime = "{audio,video}/*", fg = "#6d7a72" },
 
-    # Archives
-    { mime = "application/zip",             fg = "blue" },
-    { mime = "application/gzip",            fg = "blue" },
-    { mime = "application/x-tar",           fg = "blue" },
-    { mime = "application/x-bzip",          fg = "blue" },
-    { mime = "application/x-bzip2",         fg = "blue" },
-    { mime = "application/x-7z-compressed", fg = "blue" },
-    { mime = "application/x-rar",           fg = "blue" },
-    { mime = "application/xz",              fg = "blue" },
+  # Archives - terracotta red
+  { mime = "application/*zip", fg = "#c46f41" },
+  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#c46f41" },
 
-    # Documents
-    { mime = "application/doc",   fg = "green" },
-    { mime = "application/pdf",   fg = "green" },
-    { mime = "application/rtf",   fg = "green" },
-    { mime = "application/vnd.*", fg = "green" },
+  # Documents - sage green
+  { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#7a8471" },
 
-    # Fallback
-    # { name = "*", fg = "white" },
-    { name = "*/", fg = "magenta" }
+  # Special files
+  { name = "*", is = "orphan", bg = "#c46f41" },
+  { name = "*", is = "exec", fg = "#8a7c4a" },
+
+  # Fallback - dusty rose
+  { name = "*/", fg = "#b08080" },
 ]
-
-[icon]
-
-rules = [
-    # Programming
-    { name = "*.c"    , text = "" },
-    { name = "*.cpp"  , text = "" },
-    { name = "*.css"  , text = "" },
-    { name = "*.fish" , text = "" },
-    { name = "*.go"   , text = "" },
-    { name = "*.h"    , text = "" },
-    { name = "*.hpp"  , text = "" },
-    { name = "*.html" , text = "" },
-    { name = "*.java" , text = "" },
-    { name = "*.js"   , text = "" },
-    { name = "*.jsx"  , text = "" },
-    { name = "*.lua"  , text = "" },
-    { name = "*.nix"  , text = "" },
-    { name = "*.php"  , text = "" },
-    { name = "*.py"   , text = "" },
-    { name = "*.rb"   , text = "" },
-    { name = "*.rs"   , text = "" },
-    { name = "*.scss" , text = "" },
-    { name = "*.sh"   , text = "" },
-    { name = "*.swift", text = "" },
-    { name = "*.ts"   , text = "" },
-    { name = "*.tsx"  , text = "" },
-    { name = "*.vim"  , text = "" },
-    { name = "*.vue"  , text = "󰡄" },
-
-    # Text
-    { name = "*.bib" , text = "" },
-    { name = "*.conf", text = "" },
-    { name = "*.ini" , text = "" },
-    { name = "*.json", text = "" },
-    { name = "*.md" ,  text = "" },
-    { name = "*.tex" , text = "" },
-    { name = "*.toml", text = "" },
-    { name = "*.txt",  text = "" },
-    { name = "*.yaml", text = "" },
-    { name = "*.yml" , text = "" },
-
-    # Archives
-    { name = "*.7z" , text = "" },
-    { name = "*.bz2", text = "" },
-    { name = "*.gz" , text = "" },
-    { name = "*.rar", text = "" },
-    { name = "*.tar", text = "" },
-    { name = "*.xz" , text = "" },
-    { name = "*.zip", text = "" },
-
-    # Images
-    { name = "*.HEIC", text = "" },
-    { name = "*.avif", text = "" },
-    { name = "*.bmp" , text = "" },
-    { name = "*.gif" , text = "" },
-    { name = "*.ico" , text = "" },
-    { name = "*.jpeg", text = "" },
-    { name = "*.jpg" , text = "" },
-    { name = "*.png" , text = "" },
-    { name = "*.svg" , text = "" },
-    { name = "*.webp", text = "" },
-
-    # Movies
-    { name = "*.avi" , text = "" },
-    { name = "*.mkv" , text = "" },
-    { name = "*.mov" , text = "" },
-    { name = "*.mp4" , text = "" },
-    { name = "*.webm", text = "" },
-
-    # Audio
-    { name = "*.aac" , text = "" },
-    { name = "*.flac", text = "" },
-    { name = "*.m4a" , text = "" },
-    { name = "*.mp3" , text = "" },
-    { name = "*.ogg" , text = "" },
-    { name = "*.wav" , text = "" },
-
-    # Documents
-    { name = "*.csv" , text = "" },
-    { name = "*.doc" , text = "" },
-    { name = "*.doct", text = "" },
-    { name = "*.docx", text = "" },
-    { name = "*.dot" , text = "" },
-    { name = "*.ods" , text = "" },
-    { name = "*.ots" , text = "" },
-    { name = "*.pdf" , text = "" },
-    { name = "*.pom" , text = "" },
-    { name = "*.pot" , text = "" },
-    { name = "*.potx", text = "" },
-    { name = "*.ppm" , text = "" },
-    { name = "*.ppmx", text = "" },
-    { name = "*.pps" , text = "" },
-    { name = "*.ppsx", text = "" },
-    { name = "*.ppt" , text = "" },
-    { name = "*.pptx", text = "" },
-    { name = "*.xlc" , text = "" },
-    { name = "*.xlm" , text = "" },
-    { name = "*.xls" , text = "" },
-    { name = "*.xlsm", text = "" },
-    { name = "*.xlsx", text = "" },
-    { name = "*.xlt" , text = "" },
-
-    # Lockfiles
-    { name = "*.lock", text = "" },
-
-    # Encrypted files
-    { name = "*.gpg", text = "" },
-
-    # Misc
-    { name = "*.bin", text = "" },
-    { name = "*.exe", text = "" },
-    { name = "*.pkg", text = "" },
-
-    # Dotfiles
-    { name = ".DS_Store"     , text = "" },
-    { name = ".bashprofile"  , text = "" },
-    { name = ".bashrc"       , text = "" },
-    { name = ".gitattributes", text = "" },
-    { name = ".gitignore"    , text = "" },
-    { name = ".gitmodules"   , text = "" },
-    { name = ".vimrc"        , text = "" },
-    { name = ".zprofile"     , text = "" },
-    { name = ".zshenv"       , text = "" },
-    { name = ".zshrc"        , text = "" },
-
-    # Named files
-    { name = "COPYING"      , text = "󰿃" },
-    { name = "Containerfile", text = "󰡨" },
-    { name = "Dockerfile"   , text = "󰡨" },
-    { name = "LICENSE"      , text = "󰿃" },
-
-    # Directories
-    { name = ".config/"    , text = "" },
-    { name = ".git/"       , text = "" },
-    { name = "Desktop/"    , text = "" },
-    { name = "Development/", text = "" },
-    { name = "Docs/"       , text = "" },
-    { name = "Downloads/"  , text = "" },
-    { name = "Books/"      , text = "" },
-    { name = "Movies/"     , text = "" },
-    { name = "Vaults/"     , text = "󰩪" },
-    { name = "Music/"      , text = "" },
-    { name = "Pictures/"   , text = "" },
-    { name = "Public/"     , text = "" },
-    { name = "Videos/"     , text = "" },
-
-    # Default
-    { name = "*" , text = "" },
-    { name = "*/", text = "" },
-]
-
-# : }}}
