@@ -26,7 +26,6 @@ lazygit                                 # A tui interface for git
 lua                                     # A fast programming language designed for extensibility of other applications
 luarocks                                # Optional dependency for lazy in nvim
 man-db                                  # A utility to read man pages
-neovide                                 # A graphical interface for neovide
 neovim                                  # A powerful text editor
 newsboat                                # An OP TUI RSS feed reader
 nodejs                                  # I/O for javascript

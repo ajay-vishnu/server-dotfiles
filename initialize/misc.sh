@@ -13,15 +13,12 @@ sudo install lazygit -D -t /usr/local/bin/
 # install gitmoji-cli
 npm i -g gitmoji-cli
 
-# install drivers for ms-sql
-if ! [[ "18.04 20.04 22.04 24.04" == *"$(grep VERSION_ID /etc/os-release | cut -d '"' -f 2)"* ]]; then
-    echo "Ubuntu $(grep VERSION_ID /etc/os-release | cut -d '"' -f 2) is not currently supported."
-    exit
-fi
+cargo install --git https://github.com/sxyazi/yazi.git yazi-cli yazi-fm
+cargo install --git https://github.com/neovide/neovide.git
+cargo install --git https://github.com/linebender/resvg.git resvg
 
-# Download the package to configure the Microsoft repo
-curl -sSL -O https://packages.microsoft.com/config/ubuntu/$(grep VERSION_ID /etc/os-release | cut -d '"' -f 2)/packages-microsoft-prod.deb
-# Install the package
-sudo dpkg -i packages-microsoft-prod.deb
-# Delete the file
-rm packages-microsoft-prod.deb
+ya pack -a Rolv-Apneseth/starship
+ya pack -a yazi-rs/plugins:smart-enter
+ya pack -a yazi-rs/plugins:full-border
+ya pack -a yazi-rs/plugins:what-size
+ya pack -a yazi-rs/plugins:toggle-pane
