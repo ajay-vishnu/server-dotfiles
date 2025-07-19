@@ -40,6 +40,7 @@ stow                                    # Dotfiles managing using symlinks
 texlive                                 # LaTeX fundamental packages
 texlive-langenglish                     # Texlive tools for non-Latin languages
 tmate                                   # Utility to access remote terminal
+tmux                                    # A terminal multiplexer
 trash-cli                               # A cli trash manager
 tree-sitter-cli                         # CLI tool for developing, testing, and using Tree-sitter parsers
 ueberzug                                # A program that allows drawing images on terminals
