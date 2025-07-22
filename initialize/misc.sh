@@ -22,3 +22,5 @@ ya pack -a yazi-rs/plugins:smart-enter
 ya pack -a yazi-rs/plugins:full-border
 ya pack -a yazi-rs/plugins:what-size
 ya pack -a yazi-rs/plugins:toggle-pane
+
+go install -x github.com/jesseduffield/lazydocker

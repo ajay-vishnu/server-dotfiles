@@ -36,6 +36,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 export GPG_TTY=$(tty)
 export GNUPGHOME="$HOME"/.gnupg
 export PASSWORD_STORE_DIR="$HOME/.password-store"
+export DOCKER_HOST="ssh://dockerhost"
 
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
