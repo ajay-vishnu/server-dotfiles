@@ -1,0 +1,7 @@
+customCommands:
+  containers:
+    - name: "Show IP address"
+      command: |
+        docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' {{.Container.ID}}
+      attach: false
+      serviceNames: []
