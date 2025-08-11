@@ -106,6 +106,10 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 		local servers = {
+			typescript_language_server = {},
+			eslint = {
+				root_dir = require("lspconfig").util.root_pattern(".eslintrc.js", ".eslintrc.cjs", "package.json", ".git"),
+			},
 			basedpyright = {
 				filetypes = { "python" },
 			},
@@ -134,7 +138,7 @@ return {
 		}
 
 		require("mason-lspconfig").setup({
-			ensure_installed = {},
+			ensure_installed = { "basedpyright", "typescript_language_server", "eslint" },
 			automatic_enable = true,
 			automatic_installation = true,
 			handlers = {
@@ -144,6 +148,17 @@ return {
 					server.on_attach = on_attach
 					require("lspconfig")[server_name].setup(server)
 				end,
+			},
+		})
+
+		require("mason-lspconfig").rust_analyzer.setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = {
+				"rustup",
+				"run",
+				"stable",
+				"rust-analyzer",
 			},
 		})
 	end,
