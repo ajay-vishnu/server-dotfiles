@@ -10,6 +10,7 @@ $git_metrics\
 $fill\
 $conda\
 $python\
+$rust\
 $cmd_duration\
 $line_break\
 $character"""
@@ -37,6 +38,10 @@ format = "[${symbol}(\\[${environment}\\])](dimmed green) "
 [python]
 format = "[${symbol}${pyenv_prefix}(${version}) (\\[${virtualenv}\\])]($style) "
 symbol = " "
+
+[rust]
+format = "[${symbol}${pyenv_prefix}(${version}) (\\[${virtualenv}\\])]($style) "
+symbol = " "
 
 [directory]
 style = "bold yellow"

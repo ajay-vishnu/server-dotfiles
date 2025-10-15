@@ -16,7 +16,7 @@ return {
 	end,
 	keys = {
 		{
-			"<leader>db",
+			"<leader>dt",
 			"<CMD>tabnew<CR><BAR><BAR><CMD>DBUI<CR>",
 		},
 	},

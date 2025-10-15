@@ -16,7 +16,7 @@ return {
 			{ "<leader><tab>", group = "tab", icon = "󰓩" },
 			{ "<leader>b", group = "buffer", icon = "" },
 			{ "<leader>c", group = "code", icon = "" },
-			{ "<leader>d", group = "diagnostics", icon = "" },
+			{ "<leader>d", group = "debugging", icon = "" },
 			{ "<leader>e", group = "yazi", icon = { icon = "󰇥", color = "yellow" } },
 			{ "<leader>f", group = "find/file", icon = "" },
 			{ "<leader>g", group = "git", icon = { icon = "", color = "red" } },
