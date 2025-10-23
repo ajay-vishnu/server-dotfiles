@@ -18,7 +18,7 @@ echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] ht
 
 sudo apt update
 
-sudo apt install $(awk '{print $1}' packages.txt | tr '\n' ' ')
+sudo apt install $(awk '{print $1}' ./initialize/packages.txt | tr '\n' ' ')
 
 # Install rust and temporarily export cargo path
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
