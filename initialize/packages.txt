@@ -1,3 +1,4 @@
+7zip                                    # Extreme compression app
 android-tools                           # Android tools (adb, fastboot, etc.)
 bat                                     # Bat, a cat clone with extra wings
 biber                                   # A bibliography management tool for LaTeX

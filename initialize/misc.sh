@@ -46,12 +46,13 @@ go install -x github.com/jesseduffield/lazydocker
 # install gitmoji-cli
 npm i -g gitmoji-cli
 
-cargo install --force --git https://github.com/sxyazi/yazi.git yazi-build yazi-cli yazi-fm
+cargo install eza --locked
+cargo install jaq --locked
 cargo install --git https://github.com/neovide/neovide.git
 cargo install --git https://github.com/linebender/resvg.git resvg
-cargo install eza
-cargo install --git zoxide --locked
-cargo install tree-sitter-cli
+cargo install tree-sitter-cli --locked
+cargo install --force --git https://github.com/sxyazi/yazi.git yazi-build yazi-cli yazi-fm
+cargo install zoxide --locked
 
 ya pack -a Rolv-Apneseth/starship
 ya pack -a yazi-rs/plugins:smart-enter
@@ -59,8 +60,9 @@ ya pack -a yazi-rs/plugins:full-border
 ya pack -a yazi-rs/plugins:what-size
 ya pack -a yazi-rs/plugins:toggle-pane
 
-go install -x github.com/jesseduffield/lazydocker
-go install -x github.com/jesseduffield/lazygit
+go install -x github.com/jesseduffield/lazydocker@latest
+go install -x github.com/jesseduffield/lazygit@latest
+go install -x github.com/junegunn/fzf@latest
 
 git clone https://github.com/shaunsingh/SFMono-Nerd-Font-Ligaturized.git
 sudo cp *.otf /usr/share/fonts/opentype/sfmono-nerd-font-ligaturized
