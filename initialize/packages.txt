@@ -3,7 +3,7 @@ android-tools                           # Android tools (adb, fastboot, etc.)
 bat                                     # Bat, a cat clone with extra wings
 biber                                   # A bibliography management tool for LaTeX
 ca-certificates                         # Certificates
-cloudflare-warp-bin                     # Cloudflare Warp Client
+cloudflare-warp                         # Cloudflare Warp Client
 curl                                    # CURL
 docker-ce                               # Docker engine
 docker-ce-cli                           # Docker cli
@@ -40,7 +40,7 @@ starship                                # Beautiful shell config for fish
 stockfish                               # Powerful open source chess engine
 stow                                    # Dotfiles managing using symlinks
 texlive                                 # LaTeX fundamental packages
-texlive-langenglish                     # Texlive tools for non-Latin languages
+texlive-lang-english                    # Texlive tools for non-Latin languages
 tmux                                    # A terminal multiplexer
 trash-cli                               # A cli trash manager
 wget                                    # A file downloading utility
