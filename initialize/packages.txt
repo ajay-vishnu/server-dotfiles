@@ -16,11 +16,9 @@ ffmpeg                                  # Complete solution to record, convert a
 ffmpegthumbnailer                       # A utility to produce video thumbnails for yazi
 ffmpegthumbs                            # FFmpeg-based thumbnail creator for video files in Dolphin
 flatpak                                 # Enables installing flatpack
-fzf                                     # Fuzzy finder
 gcc                                     # C/C++ Toolchain
 gdb                                     # Debugger for C/C++
 git                                     # A neat version control system
-golang-go                               # Go Toolchain
 inkscape                                # Professional vector graphics editor
 openjdk-21-jdk                          # Java toolchain
 jq                                      # A commandline JSON parser
@@ -37,13 +35,13 @@ pandoc                                  # A document converter tool
 pkg-config                              # The configurer
 python-pip                              # A tool for installing python packages
 python3-sqlalchemy                      # Modular and flexible ORM library for python
-starship                                # Beautiful shell config for fish
 stockfish                               # Powerful open source chess engine
 stow                                    # Dotfiles managing using symlinks
 texlive                                 # LaTeX fundamental packages
 texlive-lang-english                    # Texlive tools for non-Latin languages
 tmux                                    # A terminal multiplexer
 trash-cli                               # A cli trash manager
+wezterm-nightly                         # GPU accelarated terminal
 wget                                    # A file downloading utility
 wl-clipboard                            # clipboard for wayland
 yt-dlp                                  # Downloading youtube videos and music
